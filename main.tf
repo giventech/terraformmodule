@@ -9,10 +9,14 @@ resource "aws_instance" "web" {
 
 module "aws_ec2_scale" {
   source = "./modules/aws_ec2_scale"
+  cluster_name =""
+  ami = ""
+  subnet = ""
+
 }
 
 provider "aws" {
-  region                      = "ap-southeast-2c"
+  region                      = "us-west-2"
   s3_force_path_style         = true
   skip_credentials_validation = true
   skip_metadata_api_check     = true
