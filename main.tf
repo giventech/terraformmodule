@@ -10,10 +10,12 @@ resource "aws_instance" "web" {
 
 module "aws_ec2_scale" {
   source = "./modules/aws_ec2_scale"
-  cluster_name =""
+  cluster_name ="fabcluster"
   ami = ""
   subnet = ""
-
+  instance_type = ""
+  min_size = 1
+  max_size = 2
 }
 
 provider "aws" {
