@@ -7,6 +7,7 @@ resource "aws_instance" "web" {
   }
 }
 
+
 module "aws_ec2_scale" {
   source = "./modules/aws_ec2_scale"
   cluster_name =""
