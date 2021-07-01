@@ -11,15 +11,19 @@ resource "aws_instance" "web" {
 module "aws_ec2_scale" {
   source = "./modules/aws_ec2_scale"
   cluster_name ="fabcluster"
+  adm_user = "admzjl2"
+  vpc_id = ""
   ami = ""
-  subnet = ""
-  instance_type = ""
+  subnet_ids = ["subnet-09b4f5e0c2e5b3180"]
+  instance_type = "t3.micro"
   min_size = 1
   max_size = 2
+  desired_capacity = 3
+
 }
 
 provider "aws" {
-  region                      = "us-west-2"
+  region                      = "ap-southeast-2c"
   s3_force_path_style         = true
   skip_credentials_validation = true
   skip_metadata_api_check     = true

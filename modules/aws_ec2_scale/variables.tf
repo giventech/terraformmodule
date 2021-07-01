@@ -8,13 +8,18 @@ variable "ami" {
   type        = string
 }
 
-variable "subnet" {
-  description = "The name of the S3 bucket for the database's remote state"
-  type        = string
+variable "subnet_ids" {
+  description = "The Subnet t be used"
+  type        = list(string)
 }
 
 variable "instance_type" {
   description = "The type of EC2 Instances to run (e.g. t2.micro)"
+  type        = string
+}
+
+variable "vpc_id" {
+  description = "The virtual private cloud ide "
   type        = string
 }
 
@@ -28,6 +33,22 @@ variable "max_size" {
   type        = number
 }
 
+variable "desired_capacity" {
+  description = "Desired capacity for the ASG"
+  type        = number
+}
+
+variable "adm_user" {
+  description = "adm_user"
+  type        = string
+}
+
+
+variable "tags" {
+  type        = map(any)
+  description = "List of tags and permission for the ressources"
+  default     = {}
+}
 
 # ---------------------------------------------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
