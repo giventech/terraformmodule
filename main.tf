@@ -3,10 +3,12 @@ module "aws_ec2_scale" {
   source = "./modules/aws_ec2_scale"
   cluster_name ="fabcluster"
   adm_user = "admzjl2"
-  vpc_id = ""
-  ami = ""
-  subnet_ids = ["subnet-09b4f5e0c2e5b3180"]
+  vpc_id = "vpc-a91908ce"
+  ami = "ami-05064bb33b40c33a2"
+  subnet_ids = ["subnet-b2b1d9ea", "subnet-ab4fa4e3"] # ALB requires minimum 2 subnets in two availability zones
   instance_type = "t3.micro"
+  key_name = var.key_name
+  tags = var.tags
   min_size = 1
   max_size = 2
   desired_capacity = 3

@@ -28,7 +28,7 @@ resource "aws_security_group" "http_traffic" {
 }
 # Load balancer 
 resource "aws_lb" "admzjl2_alb" {
-  name               = "${var.subnet_ids}-alb"
+  name               = "${var.adm_user}-alb"
   internal           = true
   load_balancer_type = "application"
   security_groups    = [aws_security_group.http_traffic.id]

@@ -8,6 +8,7 @@ variable "ami" {
   type        = string
 }
 
+
 variable "subnet_ids" {
   description = "The Subnet t be used"
   type        = list(string)
@@ -49,6 +50,12 @@ variable "tags" {
   description = "List of tags and permission for the ressources"
   default     = {}
 }
+
+variable "key_name" {
+  description = ""
+  type        = string
+}
+
 
 # ---------------------------------------------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
