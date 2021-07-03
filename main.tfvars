@@ -4,4 +4,4 @@ tags = {
   schedule     = "shutdown-7pm"
   created-by   = "fabrice.ginape@bendigoadelaide.com.au"
 }
-key_name = "admzjl2"
+key_name = "AWSFabrice"
